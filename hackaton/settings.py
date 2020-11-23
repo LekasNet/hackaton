@@ -21,6 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'gz-k@%cz8(k7io(v7dg0$^fk(bhjs!s46a@7$25)@u4=hvl!vw'
+PROJECT_ROOT = os.path.dirname(__FILE__)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
