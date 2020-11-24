@@ -3,7 +3,7 @@
 ```shell script
 git clone https://github.com/LekasNet/hackaton.git
 cd hackaton
-pip install -r requiremens.txt
+pip install -r requirements.txt
 python3 manage.py migrate
 python3 manage.py runserver
 ```
