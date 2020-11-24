@@ -20,3 +20,7 @@ from django.conf import settings
 class Course(models.Model):
     tutor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 ```
+
+postgresql https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+Пароль при установке "1"
+При установке в какой-то момент будет выбор доп. пакетов. Там можно выбрать Postgis. Выбираем.
