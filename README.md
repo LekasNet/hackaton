@@ -1,9 +1,18 @@
 # Документация #
-Команда для создания суперпользователя
+### Разворачивание проекта: ###
+```shell script
+git clone https://github.com/LekasNet/hackaton.git
+pip install -r requiremens.txt
+python3 manage.py migrate
+python3 manage.py runserver
+```
+БИНГО!!!
+
+### Команда для создания суперпользователя ###
 ```
 ./manage.py createsuperuser 
 ```
-Для подключения связи с моделью пользователя используем
+### Для подключения связи с моделью пользователя используем ###
 ```
 from django.conf import settings
 
