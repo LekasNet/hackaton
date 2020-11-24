@@ -2,6 +2,7 @@
 ### Разворачивание проекта: ###
 ```shell script
 git clone https://github.com/LekasNet/hackaton.git
+cd hackaton
 pip install -r requiremens.txt
 python3 manage.py migrate
 python3 manage.py runserver
