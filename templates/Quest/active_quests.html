@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+{% for active_quest in  active_quests %}
+
+    <div class="jumbotron">
+  <h1 class="display-4">{{ active_quest.name }}</h1>
+  <a class="btn btn-primary btn-lg" href="{% url 'quest_url' active_quest.id %}" role="button">Перейти</a>
+</div>
+{% endfor %}
+{% endblock %}
