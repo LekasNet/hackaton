@@ -3,9 +3,9 @@ from django.db.models import Sum, Count
 from django.conf import settings
 
 
-
 class Quest(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название викторины')
+    description = models.TextField(default='', verbose_name='Описание')
     is_active = models.BooleanField(default=False, verbose_name='Викторина активна')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='quizzes', on_delete=models.CASCADE)
 
