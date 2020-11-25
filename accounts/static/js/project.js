@@ -1,5 +1,4 @@
 function init() {
-    // Задаём точки мультимаршрута.
     var x = document.querySelector('.block').getAttribute('data-attr-x');
     var y = document.querySelector('.block2').getAttribute('data-attr-y');
     alert(x + ', ' + y);
@@ -40,7 +39,7 @@ function init() {
 
     // Создаем карту с добавленной на нее кнопкой.
     var myMap = new ymaps.Map('map', {
-        center: [55.739625, 37.54120],
+        center: [x, y],
         zoom: 12,
         controls: [changePointsButton]
     }, {
