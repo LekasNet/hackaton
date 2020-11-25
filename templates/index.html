@@ -1,4 +1,17 @@
 {% extends "base.html" %}
 {% block body %}
-    <h1>Это заглавная страница(не самая главная :))</h1>
+	<body>
+	<div class="block" data-attr-x="{{ x }}"></div>
+  	<div class="block2" data-attr-y="{{ y }}"></div>
+  	<div class="wrapper">
+  	<div class="half">
+    <div class="tab">
+      <input id="tab-one" type="checkbox" name="tabs">
+      <label for="tab-one">MAP</label>
+      <div class="tab-content">
+        <p><div id="map" style="width: 600px; height: 400px"></div></p>
+      </div>
+    </div>
+  </div>
+	</body>
 {% endblock %}
