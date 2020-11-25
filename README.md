@@ -7,6 +7,11 @@ pip install -r requirements.txt
 python3 manage.py migrate
 python3 manage.py runserver
 ```
+### для python 3.8.3+ ###
+```shell script
+Python manage.py migrate
+Python manage.py runserver
+```
 БИНГО!!!
 
 ### Команда для создания суперпользователя ###
