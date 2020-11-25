@@ -1,7 +1,6 @@
 function init() {
     var x = document.querySelector('.block').getAttribute('data-attr-x');
     var y = document.querySelector('.block2').getAttribute('data-attr-y');
-    alert(x + ', ' + y);
     var pointA = [x, y], 
         pointB = "Москва, Красная площадь",
         /**
@@ -41,7 +40,6 @@ function init() {
     var myMap = new ymaps.Map('map', {
         center: [x, y],
         zoom: 12,
-        controls: [changePointsButton]
     }, {
         buttonMaxWidth: 300
     });
