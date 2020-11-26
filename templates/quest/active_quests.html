@@ -2,7 +2,7 @@
 {% block body %}
 {% for active_quest in  active_quests %}
 {% load static %}
-<div class="card bg-dark text-white" id="card" onClick="window.location.href='/'">
+<div class="card bg-dark text-white" id="card" onClick="window.location.href='{% url 'quest' active_quest.id %}'">
   <img class="card-img" id="card_image" src="{% static active_quest.image_directory %}" alt="Card image" >
   <div class="card-img-overlay">
     <h5 class="card-title" id="title">{{ active_quest.name }}</h5>
