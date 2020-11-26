@@ -1,8 +1,10 @@
 function init() {
-    var x = document.querySelector('.block').getAttribute('data-attr-x');
-    var y = document.querySelector('.block2').getAttribute('data-attr-y');
-    var pointA = [x, y], 
-        pointB = "Москва, Красная площадь",
+    var x_b = document.querySelector('.block').getAttribute('data-attr-x_b');
+    var y_b = document.querySelector('.block2').getAttribute('data-attr-y_b');
+    var x_a = document.querySelector('.block3').getAttribute('data-attr-x_a');
+    var y_a = document.querySelector('.block4').getAttribute('data-attr-y_a');
+    var pointA = [x_a, y_a], 
+        pointB = [x_b, y_b],
         /**
          * Создаем мультимаршрут.
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRoute.xml
@@ -38,7 +40,7 @@ function init() {
 
     // Создаем карту с добавленной на нее кнопкой.
     var myMap = new ymaps.Map('map', {
-        center: [x, y],
+        center: [x_a, y_a],
         zoom: 12,
     }, {
         buttonMaxWidth: 300

@@ -4,7 +4,7 @@
 <p>Спасибо, что прошли квест</p>
     <h4>Количество вопросов <span class="badge badge-info">{{ quest.get_questions_count }}</span></h4>
     <h4>Максимальное количество баллов <span class="badge badge-info">{{ quest.get_questions_cost.cost__sum}}</span></h4>
-    <h4>Ваш результат <span class="badge badge-info">{{ cost.cost__sum }}</span></h4>
+    <h4>Ваш результат <span class="badge badge-info">{{ summ }}</span></h4>
 
     <a href="{% url 'active_quests' %}">Дальше</a>
 {% endblock %}

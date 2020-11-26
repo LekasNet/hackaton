@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
 <h1>{{ quest.name }}</h1>
-
 <p>{{ question.text }}</p>
 <form method="post">
 {% for answer in question.answers.all %}
@@ -9,6 +8,20 @@
 {% endfor %}
 <input type="submit">
 {% csrf_token %}
+  <div class="block" data-attr-x_b="{{ x_b }}"></div>
+  <div class="block2" data-attr-y_b="{{ y_b }}"></div>
+  <div class="block3" data-attr-x_a="{{ x_a }}"></div>
+  <div class="block4" data-attr-y_a="{{ y_a }}"></div>
+    <div class="wrapper">
+    <div class="half">
+    <div class="tab">
+      <input id="tab-one" type="checkbox" name="tabs">
+      <label for="tab-one">MAP</label>
+      <div class="tab-content">
+        <p><div id="map" style="width: 600px; height: 400px"></div></p>
+      </div>
+    </div>
+  </div>
 </form><p></p>
     <table class="table">
   <thead>

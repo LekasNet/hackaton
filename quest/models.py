@@ -9,6 +9,7 @@ class Quest(models.Model):
     is_active = models.BooleanField(default=False, verbose_name='Викторина активна')
     image_directory = models.CharField(default="img/q.jpg", max_length=255)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='quizzes', on_delete=models.CASCADE)
+    point = models.TextField(default="55.753600, 37.621094")
 
 
     def __str__(self):
@@ -28,6 +29,7 @@ class Question(models.Model):
     text = models.TextField(verbose_name='Текст вопроса')
     quest = models.ForeignKey(Quest, related_name='questions', on_delete=models.CASCADE)
     cost = models.IntegerField(verbose_name='Стоимость вопроса', default=0)
+    point = models.TextField(default="55.753600, 37.621094")
 
     def next_question(self, quest=None):
         if quest:
@@ -35,8 +37,13 @@ class Question(models.Model):
         else:
             return Question.objects.filter(id__gt=self.id, quest=self.quest).order_by('id').first()
 
-    def __str__(self):
-        return self.text
+    def position(self, id=2):
+        ls = Question.objects.get(id=id)
+        return ls.point
+
+    def last_question(self, quest_id):
+        ls = Question.objects.filter(quest_id=quest_id).last().id
+        return ls
 
 
 class Answer(models.Model):

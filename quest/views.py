@@ -26,9 +26,16 @@ class QuestionView(View):
         quest = get_object_or_404(Quest, pk=quest_id)
         question = get_object_or_404(Question, pk=question_id, quest_id=quest)
         next_question = question.next_question()
+        if question.last_question(quest_id) > question_id:
+            point = question.position(question_id + 1)
+        else:
+            point = question.position(question_id)
+        previous_point = question.position(question_id).split(", ")
+        points = point.split(", ")
         gamers = UserAnswer.get_gamers(quest.id)
         return render(request, 'quest/question.html',
-                      {'quest': quest, 'question': question, 'next_question': next_question, 'gamers':gamers})
+                      {'quest': quest, 'question': question, 'next_question': next_question, 'gamers':gamers,
+                       'x_b': points[0], 'y_b': points[1], 'x_a': previous_point[0], 'y_a': previous_point[1]})
 
     def post(self, request, quest_id, question_id):
         quest = get_object_or_404(Quest, pk=quest_id)
@@ -52,8 +59,9 @@ class QuestEndView(View):
     def get(self, request, quest_id):
         quest = get_object_or_404(Quest, pk=quest_id)
         cost = UserAnswer.get_cost_user_result(request.user, quest.id)
+        summ = cost["cost__sum"] - 10
         return render(request, 'quest/end.html',
-                      {'quest': quest, 'cost': cost})
+                      {'quest': quest, 'cost': cost, 'summ': summ})
 
 
 class MyStatView(View):
