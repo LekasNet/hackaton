@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block body %}
 {% for active_quest in  active_quests %}
-
-  <div class="jumbotron">
-  <h1 class="display-4">{{ active_quest.name }}</h1>
-        <p>{{ active_quest.description }}</p>
-  <a class="btn btn-primary btn-lg" href="{% url 'quest_url' active_quest.id %}" role="button">Перейти</a>
+{% load static %}
+<div class="card bg-dark text-white" id="card">
+  <img class="card-img" id="card_image" src="{% static active_quest.image_directory %}" alt="Card image" >
+  <div class="card-img-overlay">
+    <h5 class="card-title" id="title">{{ active_quest.name }}</h5>
+    <p class="card-text" id="description">{{ active_quest.description }}</p>
+  </div>
 </div>
 {% endfor %}
 {% endblock %}

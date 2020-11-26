@@ -84,3 +84,41 @@ h1 {
 .tab input[type=radio]:checked + label::after {
   transform: rotateX(180deg);
 }
+
+.jumbotron {
+  
+}
+
+#card_image {
+  opacity: 0.30; 
+  object-fit: cover;
+}
+#card {
+  border-radius: 30px;
+  max-height: 300px; 
+  margin-top: 10px;
+  background-color:rgba(0,0,0,.3); 
+  -webkit-text-stroke: 0.07vw black; 
+  -webkit-text-fill-color: white; 
+  object-fit: cover; 
+  overflow: hidden; 
+  align-items: center;
+  line-height: calc(6px - 1vw);
+}
+#title {
+  font-size: 3.3vw;
+}
+#description {
+    font-size: 2.3vw;
+    -webkit-text-stroke: 0px black; 
+    -webkit-text-fill-color: white;
+}
+
+@media screen and (min-width: 1200px) {
+  #title {
+    font-size: 39.6px;
+  }
+    #description {
+    font-size: 27.6px;
+  }
+}

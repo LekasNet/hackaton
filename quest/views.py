@@ -9,6 +9,7 @@ class ActiveQuestView(View):
 
     def get(self, request):
         active_quests = Quest.objects.filter(is_active=True)
+        print(active_quests)
         return render(request, 'quest/active_quests.html', {'active_quests': active_quests})
 
 
