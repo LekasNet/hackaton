@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+    <table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Квест</th>
+      <th scope="col">Ответов</th>
+      <th scope="col">Баллов</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for quest in quests %}
+        <tr>
+        <td>{{ quest.question__quest__name }}</td>
+        <td>{{ quest.count }}</td>
+        <td>{{ quest.cost }}</td>
+        </tr>
+    {% endfor %}
+  </tbody></table>
+    </div>
+{% endblock %}
